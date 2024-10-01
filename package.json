@@ -1,0 +1,9 @@
+{
+    "main": "index.js",
+    "dependencies": {
+        "wrangler": "^3.79.0"
+    },
+    "scripts": {
+        "dev": "wrangler dev"
+    }
+}
