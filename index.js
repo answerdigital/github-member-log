@@ -39,7 +39,7 @@ function buildMessage(event) {
         break;
     }
 
-    if (event.action.includes('added') || user.login != event.sender.login) {
+    if (user.login != event.sender.login) {
       messageBlock.text.text += ` by <${event.sender.html_url}|${event.sender.login}>`;
     }
 
