@@ -23,20 +23,12 @@ function buildMessage(event) {
     messageBlock.accessory.alt_text = `${user.login} on GitHub`;
     messageBlock.text.text = `*<${user.html_url}|${user.login}>* `;
 
-    switch (event.action) {
-      case 'member_added':
-      case 'added':
-        messageBlock.text.text += 'was added to ' + type;
-        break;
-
-      case 'member_removed':
-      case 'removed':
-        if (user.login == event.sender.login) {
-          messageBlock.text.text += 'removed themselves from ' + type;
-        } else {
-          messageBlock.text.text += 'was removed from ' + type;
-        }
-        break;
+    if (event.action.includes('added')) {
+      messageBlock.text.text += 'was added to ' + type;
+    } else if (user.login == event.sender.login) {
+      messageBlock.text.text += 'removed themselves from ' + type;
+    } else {
+      messageBlock.text.text += 'was removed from ' + type;
     }
 
     if (user.login != event.sender.login) {
