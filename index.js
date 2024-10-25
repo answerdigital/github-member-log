@@ -13,9 +13,11 @@ function buildMessage(event) {
   if (['member_added', 'member_removed'].includes(event.action)) {
     user = event.membership.user;
     type = `the ${event.organization.login} organisation`;
+    if (event.action == 'member_added') { type += ` (as ${event.membership.role})`; }
   } else if (['added', 'removed'].includes(event.action)) {
     user = event.member;
     type = `the <${event.repository.html_url}|${event.repository.full_name}> repository`;
+    if (event.action == 'added') { type += ` (with ${event.changes.role_name.to} permission)`; }
   }
 
   if (user) {
