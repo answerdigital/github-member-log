@@ -19,7 +19,7 @@ Clone this repository and set the following environment variables:
 
 * `CF_ACCOUNT_ID` - the Cloudflare account ID from your dashboard
 * `CF_API_TOKEN` - a [Cloudflare API token](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/) - use the "Edit Cloudflare Workers" template
-* `API_SECRET` - the shared secret that will be used to sign the GitHub payloads
+* `API_SECRET` - a shared secret you create that will be used to sign the GitHub payloads
 * `SLACK_WEBHOOK` - the Slack incoming webhook URL
 
 You can also change `wrangler.toml` to alter the worker name or define custom routes.
