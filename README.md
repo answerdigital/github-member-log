@@ -3,6 +3,8 @@
 A simple Cloudflare Worker to receive a [GitHub Webhook](https://docs.github.com/en/webhooks) and
 send member/collaborator add/remove events to Slack.
 
+The slack app is called GitHub Admin Log, and logs to the #admins-git
+
 ## Deploy With Cloudflare
 
 Requires the following:
